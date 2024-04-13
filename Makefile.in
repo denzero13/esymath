@@ -1,0 +1,30 @@
+CC = gcc
+
+SRCS = main.c func.c
+OBJS = $(SRCS:.c=.o)
+TARGET = esymath
+INSTALL_DIR = /usr/local/bin
+HEADER_DIR = /usr/local/include
+
+.PHONY: all inctall clean clean-all
+
+all: $(TARGET)
+
+$(TARGET): $(OBJS)
+	$(CC) -o $@ $^
+
+%.o: %.c
+	$(CC) -c -o $@ $<
+
+install: $(TARGET)
+	cp $(TARGET) $(INSTALL_DIR)
+	cp header.h $(HEADER_DIR)
+
+clean:
+	rm -f $(OBJS) $(TARGET)
+
+clean-all: clean
+	rm -f $(INSTALL_DIR)/$(TARGET)
+	rm -f $(HEADER_DIR)/header.h    
+	rm -f $(TARGET)
+	rm -f *.status *.log
