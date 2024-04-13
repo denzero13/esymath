@@ -34,7 +34,7 @@ To build and install the program, follow these steps:
 To remove programe build use `make clean`:
 
 ```bash
-sudo make clean
+make clean
 ```
 To remove the program from your system, you can use `make clean-all`:
 
