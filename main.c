@@ -36,7 +36,6 @@ int main() {
 	    return -1;
 	}
 	    
-	    
-    printf("Result: %d  \n", res);
+    printf("Result of operation %c is %d \n", operation, res);
     return 0;
 }
